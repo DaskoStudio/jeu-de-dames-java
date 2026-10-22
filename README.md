@@ -80,3 +80,15 @@ Lors d'une future itération, nous pourrions envisager :
 1. **Mode Solo (IA)** : Implémenter un algorithme *Minimax* pour permettre de jouer contre l'ordinateur.
 2. **Mode Multijoueur en ligne** : Utiliser les *Sockets* Java (TCP/IP) pour connecter deux joueurs à distance.
 3. **Historique avancé** : Pouvoir "rejouer" visuellement une ancienne partie enregistrée coup par coup.
+
+## 👤 Auteur
+
+Konaté Adama (@DaskoStudio) — Ynov Campus
+
+## 🧱 Structure
+
+`src/` : sources Java ; `lib/` : bibliothèques du projet.
+
+## 🛠️ Stack
+
+Java · JavaFX · Programmation orientée objet.
