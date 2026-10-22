@@ -1,0 +1,12 @@
+# Build Java
+bin/
+out/
+*.class
+*.iml
+
+# Données de session
+savegame.dat
+
+# OS / éditeur
+.DS_Store
+.idea/
