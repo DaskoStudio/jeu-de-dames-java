@@ -1,24 +1,16 @@
-# International Draughts 10×10 (Java / JavaFX)
+<div align="center">
 
-> A complete two-player draughts game with a modern JavaFX interface: international rules on a 10×10 board, mandatory and multiple captures, king promotion, timers, save/load and visual themes with accessibility options.
+<img src="./.github/banner.svg" alt="Draughts 10x10" width="100%">
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![JavaFX](https://img.shields.io/badge/JavaFX-21-4e9a06?style=flat-square)
-![OOP](https://img.shields.io/badge/OOP-encapsulation%20%C2%B7%20SRP-38f0c0?style=flat-square)
+**A complete two-player draughts game with a modern JavaFX interface: international rules on a 10×10 board, mandatory and multiple captures, king promotion, timers, save/load and visual themes with accessibility options.**
 
----
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white) ![JavaFX](https://img.shields.io/badge/JavaFX-21-4e9a06?style=flat-square) ![OOP](https://img.shields.io/badge/OOP-encapsulation%20%C2%B7%20SRP-38f0c0?style=flat-square)
 
-## Table of contents
+[Context and team](#-context-and-team) · [Features and rules](#-features-and-rules) · [Architecture and OOP quality](#-architecture-and-oop-quality) · [Getting started](#-getting-started) · [Tech stack](#-tech-stack)
 
-- [Context and team](#context-and-team)
-- [Features and rules](#features-and-rules)
-- [Why JavaFX](#why-javafx)
-- [Architecture and OOP quality](#architecture-and-oop-quality)
-- [Getting started](#getting-started)
-- [Retrospective](#retrospective)
-- [Roadmap](#roadmap)
+</div>
 
-## Context and team
+## 📖 Context and team
 
 Built as a team project for an object-oriented programming course. The brief: a full game that follows the classic rules of international draughts, with a modern, intuitive graphical interface.
 
@@ -29,7 +21,7 @@ Built as a team project for an object-oriented programming course. The brief: a 
 | **Adama** | Backend & game logic | Game engine (`Jeu.java`, `Plateau.java`), move algorithms, capture chains, save system |
 | **Michael** | Frontend & UI/UX | JavaFX interface (`Main.java`), animated backgrounds (`BackgroundAnimator`), timer, menus, themes |
 
-## Features and rules
+## ✨ Features and rules
 
 The game follows the classic rules of international draughts:
 
@@ -40,13 +32,20 @@ The game follows the classic rules of international draughts:
 - **End of game** — victory is detected when a player has no pieces left or cannot move.
 - **Extras** — per-player timer, move history, save/load, dynamic graphical themes.
 
-## Why JavaFX
+## 🎨 Why JavaFX
 
 1. **Fluid UX** — transitions, hover effects and board rotation make the game feel alive.
 2. **Robust error handling** — illegal moves never crash the app: the board shakes and a message explains why.
 3. **Visual customisation** — JavaFX `Pane`s and `Node`s made it easy to build many themes and programmatic animated backgrounds, with accessibility modes supported natively.
 
-## Architecture and OOP quality
+## 🏗️ Architecture and OOP quality
+
+```mermaid
+flowchart LR
+    GUI["Main (JavaFX)<br/>renders state, captures clicks"] --> JEU["Jeu<br/>turn controller"]
+    JEU --> PL["Plateau<br/>board rules"]
+    PL --> PI["Piece<br/>man or king"]
+```
 
 - **Strict encapsulation** — attributes of `Piece`, `Plateau` and `Jeu` are private and only reachable through dedicated methods, so the game state stays consistent.
 - **Single responsibility** — each class has one job:
@@ -72,7 +71,7 @@ src/
 lib/                        JavaFX 21.0.2 jars
 ```
 
-## Getting started
+## 🚀 Getting started
 
 **Prerequisites:** JDK 17 or newer and the JavaFX SDK (version 21 jars are bundled in `lib/`; use the SDK matching your operating system).
 
@@ -87,7 +86,7 @@ java  --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.graphics,ja
 
 With IntelliJ IDEA or Eclipse, add the JavaFX libraries in *Project Structure → Libraries* and run `Main`.
 
-## Retrospective
+## 🛣️ Retrospective
 
 **Difficulties**
 - **Multi-capture algorithm** — forcing a player to keep playing the same piece while a capture chain exists required rethinking state handling in `Jeu`.
@@ -98,16 +97,20 @@ With IntelliJ IDEA or Eclipse, add the JavaFX libraries in *Project Structure �
 - Discovery of JavaFX: scenes, nodes and event handlers.
 - Better teamwork and up-front software design (an implicit MVC split).
 
-## Roadmap
+## 🛣️ Roadmap
 
 1. **Solo mode (AI)** — a Minimax algorithm to play against the computer.
 2. **Online multiplayer** — Java sockets (TCP/IP) to connect two remote players.
 3. **Advanced history** — replay a saved game move by move.
 
-## Tech stack
+## 🧰 Tech stack
 
 Java · JavaFX · Object-oriented programming
 
 ---
 
-**Author** — Konaté Adama · [github.com/DaskoStudio](https://github.com/DaskoStudio)
+<div align="center">
+
+<sub>Built by <a href="https://github.com/DaskoStudio"><b>Konaté Adama</b></a> · <a href="https://github.com/DaskoStudio?tab=repositories">More projects</a></sub>
+
+</div>
